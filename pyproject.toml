@@ -1,0 +1,57 @@
+[project]
+name = "base-cli-py"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+base-cli-py = "base_cli_py.main:main"
+
+[build-system]
+requires = ["uv_build>=0.9,<0.10"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "coverage>=7.13.5",
+    "mypy>=1.20.1",
+    "pyright>=1.1.408",
+    "pytest>=9.0.3",
+    "ruff>=0.15.11",
+    "ty>=0.0.31",
+]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+
+[tool.ruff.lint]
+ignore = [
+    "E501",
+]
+select = [
+    "E",   # pycodestyle (error)
+    "F",   # pyflakes
+    "B",   # bugbear
+    "B9",
+    "C4",  # flake8-comprehensions
+    "SIM", # flake8-simplify
+    "I",   # isort
+    "UP",  # pyupgrade
+    "PIE", # flake8-pie
+    "PGH", # pygrep-hooks
+    "PYI", # flake8-pyi
+    "RUF",
+]
