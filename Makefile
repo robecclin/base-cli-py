@@ -1,4 +1,4 @@
-.PHONY: check clean
+.PHONY: check clean upgrade
 
 check:
 	uv run ruff check
@@ -12,3 +12,6 @@ check:
 clean:
 	rm -rf .coverage .pytest_cache .ruff_cache .mypy_cache
 	find . -type d -name __pycache__ -exec rm -rf {} +
+
+upgrade:
+	uv sync --upgrade
