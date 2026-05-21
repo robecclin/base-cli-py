@@ -20,6 +20,7 @@ dev = [
     "pytest>=9.0",
     "ruff>=0.15",
     "ty>=0.0.38",
+    "vulture>=2.16",
 ]
 
 [tool.coverage.report]
@@ -52,3 +53,6 @@ select = [
     "PYI", # flake8-pyi
     "RUF",
 ]
+
+[tool.vulture]
+paths = ["src", "tests"]

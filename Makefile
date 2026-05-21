@@ -3,6 +3,7 @@
 check:
 	uv run ruff check
 	uv run ruff format --check
+	uv run vulture
 	uv run ty check
 	uv run pyright
 	uv run mypy
