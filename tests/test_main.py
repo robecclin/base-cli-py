@@ -1,6 +1,6 @@
 import pytest
 
-from base_cli_py import main
+from base_cli import main
 
 
 def test_main_dispatches_subcommand(capsys: pytest.CaptureFixture[str]) -> None:
@@ -25,4 +25,4 @@ def test_main_help_exits_zero(capsys: pytest.CaptureFixture[str]) -> None:
     with pytest.raises(SystemExit) as exc:
         main.main(["--help"])
     assert exc.value.code == 0
-    assert "base-cli-py" in capsys.readouterr().out
+    assert "base-cli" in capsys.readouterr().out

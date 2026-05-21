@@ -1,12 +1,12 @@
 [project]
-name = "base-cli-py"
+name = "base-cli"
 version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.14"
 dependencies = []
 
 [project.scripts]
-base-cli-py = "base_cli_py.main:main"
+base-cli = "base_cli.main:main"
 
 [build-system]
 requires = ["uv_build>=0.11,<0.12"]

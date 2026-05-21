@@ -1,11 +1,11 @@
 import argparse
 import sys
 
-from base_cli_py.command import helloworld
+from base_cli.command import helloworld
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="base-cli-py", description="Base CLI")
+    parser = argparse.ArgumentParser(prog="base-cli", description="Base CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     hello = subparsers.add_parser("helloworld", help="Print a hello world greeting")

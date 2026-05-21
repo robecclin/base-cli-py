@@ -1,6 +1,6 @@
 import pytest
 
-from base_cli_py.command import helloworld
+from base_cli.command import helloworld
 
 
 def test_run_with_name(capsys: pytest.CaptureFixture[str]) -> None:
