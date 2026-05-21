@@ -43,19 +43,19 @@ ignore = [
     "S101", # assert
 ]
 select = [
-    "E",   # pycodestyle (error)
-    "F",   # pyflakes
     "B",   # bugbear
     "B9",
     "C4",  # flake8-comprehensions
-    "SIM", # flake8-simplify
+    "E",   # pycodestyle (error)
+    "F",   # pyflakes
     "I",   # isort
-    "UP",  # pyupgrade
-    "PIE", # flake8-pie
     "PGH", # pygrep-hooks
+    "PIE", # flake8-pie
     "PYI", # flake8-pyi
     "RUF",
     "S",   # flake8-bandit
+    "SIM", # flake8-simplify
+    "UP",  # pyupgrade
 ]
 
 [tool.vulture]
