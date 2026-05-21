@@ -39,6 +39,9 @@ files = ["src", "tests"]
 typeCheckingMode = "strict"
 
 [tool.ruff.lint]
+ignore = [
+    "S101", # assert
+]
 select = [
     "E",   # pycodestyle (error)
     "F",   # pyflakes
@@ -52,6 +55,7 @@ select = [
     "PGH", # pygrep-hooks
     "PYI", # flake8-pyi
     "RUF",
+    "S",   # flake8-bandit
 ]
 
 [tool.vulture]
