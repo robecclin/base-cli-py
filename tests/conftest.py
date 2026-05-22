@@ -4,8 +4,7 @@ from typing import Protocol
 import pytest
 from typer.testing import CliRunner
 
-from base_cli import main  # pyright: ignore[reportUnusedImport]  # noqa: F401
-from base_cli.app import app
+from base_cli.main import app
 
 
 @dataclass(frozen=True, slots=True)

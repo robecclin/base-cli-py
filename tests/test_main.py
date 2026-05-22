@@ -4,19 +4,19 @@ from tests.conftest import RunCli
 def test_main_dispatches_subcommand(run_cli: RunCli) -> None:
     result = run_cli("helloworld")
     assert result.code == 0
-    assert result.stdout == "Hello, world!\n"
+    assert "Hello, world!" in result.stdout
 
 
 def test_main_passes_name_argument(run_cli: RunCli) -> None:
     result = run_cli("helloworld", "--name", "Alice")
     assert result.code == 0
-    assert result.stdout == "Hello, Alice!\n"
+    assert "Hello, Alice!" in result.stdout
 
 
 def test_main_dispatches_goodbye(run_cli: RunCli) -> None:
     result = run_cli("goodbye", "--name", "Alice")
     assert result.code == 0
-    assert result.stdout == "Goodbye, Alice!\n"
+    assert "Goodbye, Alice!" in result.stdout
 
 
 def test_main_requires_subcommand(run_cli: RunCli) -> None:

@@ -72,5 +72,4 @@ select = [
 ]
 
 [tool.vulture]
-ignore_decorators = ["@app.callback", "@app.command"]
 paths = ["src", "tests"]
