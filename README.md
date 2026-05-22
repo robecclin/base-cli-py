@@ -2,8 +2,7 @@
 
 [![ci](https://github.com/robecclin/base-cli-py/actions/workflows/ci.yml/badge.svg)](https://github.com/robecclin/base-cli-py/actions/workflows/ci.yml)
 
-Minimal bleeding-edge Python CLI template with latest tooling, strict
-type checking, linting, formatting, and 100% coverage.
+Minimal bleeding-edge Python CLI template with latest tooling, strict type checking, linting, formatting, and 100% coverage.
 
 ## Usage
 
@@ -14,11 +13,11 @@ Hello, Alice!
 
 ## Fork
 
-1. Click **Use this template** on GitHub (or `gh repo create --template`).
-2. Rename the package: change `base-cli` → `your-cli` and `base_cli` →
-   `your_cli` in `pyproject.toml`, `src/`, and `tests/`.
-3. Update `description`, the CI badge URL, and `LICENSE` copyright.
-4. `make install && make check`.
+Clone this repo (don't template it) so you can rebase against upstream for future updates.
+
+1. Rename `base-cli` → `your-cli` and `base_cli` → `your_cli` in `pyproject.toml`, `src/`, and `tests/`.
+2. Update `description`, the CI badge URL, and `LICENSE` copyright.
+3. `make install && make check`.
 
 ## Development
 

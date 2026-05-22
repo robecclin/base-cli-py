@@ -4,7 +4,7 @@ from typing import Annotated
 from rich import print
 from typer import Option  # pyright: ignore[reportUnknownVariableType]
 
-from ..app import app
+from base_cli.app import app
 
 logger = logging.getLogger(__name__)
 
