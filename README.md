@@ -8,7 +8,8 @@ preconfigured with strict type checking, linting, formatting, and 100% coverage.
 ## Usage
 
 ```sh
-uv run base-cli helloworld --name Alice
+$ uv run base-cli helloworld --name Alice
+Hello, Alice!
 ```
 
 ## Development

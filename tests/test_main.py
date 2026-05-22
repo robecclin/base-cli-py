@@ -9,6 +9,12 @@ def test_main_dispatches_subcommand(capsys: pytest.CaptureFixture[str]) -> None:
     assert capsys.readouterr().out == "Hello, world!\n"
 
 
+def test_main_passes_name_argument(capsys: pytest.CaptureFixture[str]) -> None:
+    rc = main.main(["helloworld", "--name", "Alice"])
+    assert rc == 0
+    assert capsys.readouterr().out == "Hello, Alice!\n"
+
+
 def test_main_requires_subcommand() -> None:
     with pytest.raises(SystemExit) as exc:
         main.main([])
