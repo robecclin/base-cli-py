@@ -2,8 +2,8 @@
 
 [![ci](https://github.com/robecclin/base-cli-py/actions/workflows/ci.yml/badge.svg)](https://github.com/robecclin/base-cli-py/actions/workflows/ci.yml)
 
-A minimal Python 3.14 CLI template built with [uv](https://docs.astral.sh/uv/),
-preconfigured with strict type checking, linting, formatting, and 100% coverage.
+Minimal Python CLI template with strict type checking, linting,
+formatting, and 100% coverage.
 
 ## Usage
 
