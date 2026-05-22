@@ -26,8 +26,9 @@ dev = [
 ]
 
 [tool.coverage.report]
-show_missing = true
 fail_under = 100
+show_missing = true
+skip_empty = true
 
 [tool.coverage.run]
 source = ["src"]
