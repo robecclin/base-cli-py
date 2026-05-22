@@ -1,7 +1,7 @@
 [project]
 name = "base-cli"
 version = "0.1.0"
-description = "Minimal Python CLI template with strict tooling."
+description = "Minimal bleeding-edge CLI template with latest tooling and strict checks."
 license = "Apache-2.0"
 license-files = ["LICENSE"]
 classifiers = [
@@ -14,8 +14,8 @@ dependencies = []
 base-cli = "base_cli.main:main"
 
 [build-system]
-requires = ["uv_build>=0.11.16,<0.12"]
 build-backend = "uv_build"
+requires = ["uv_build>=0.11.16,<0.12"]
 
 [dependency-groups]
 dev = [
@@ -26,6 +26,7 @@ dev = [
     "ruff>=0.15",
     "ty>=0.0.38",
     "vulture>=2.16",
+    "yamllint>=1.38",
 ]
 
 [tool.coverage.report]
@@ -34,12 +35,12 @@ show_missing = true
 skip_empty = true
 
 [tool.coverage.run]
-source = ["src"]
 branch = true
+source = ["src"]
 
 [tool.mypy]
-strict = true
 files = ["src", "tests"]
+strict = true
 
 [tool.pyright]
 typeCheckingMode = "strict"

@@ -9,7 +9,7 @@ check:
 	uv run mypy
 	uv run coverage run -m pytest
 	uv run coverage report
-	uvx yamllint@1.38.0 .
+	uv run yamllint .
 
 clean:
 	rm -rf .coverage .pytest_cache .ruff_cache .mypy_cache
