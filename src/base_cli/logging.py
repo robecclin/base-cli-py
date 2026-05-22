@@ -9,14 +9,12 @@ class MarkdownRichHandler(RichHandler):
         return Markdown(message)
 
 
-def configure_logging(verbosity: int = 0) -> None:
-    """Set up root logging. `verbosity` is `-v` count minus `-q` count."""
-    level = logging.INFO - verbosity * 10
+def configure_logging() -> None:
+    """Set up root logging."""
     logging.basicConfig(
-        level=level,
+        level=logging.INFO,
         format="%(message)s",
         datefmt="[%X]",
         handlers=[MarkdownRichHandler()],
         force=True,
     )
-    logging.getLogger("markdown_it").setLevel(logging.WARNING)

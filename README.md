@@ -33,15 +33,16 @@ make clean     # remove caches
 
 ```
 src/base_cli/
-  main.py            # argparse entry point
+  app.py             # typer app instance
+  main.py            # entry point: wires app + commands
   command/           # one module per subcommand
 tests/               # pytest suite (100% coverage required)
 ```
 
 ### Add a subcommand
 
-1. Create `src/base_cli/command/foo.py` with `def run(...) -> int`.
-2. In `main.py`, add a subparser block and a `case "foo":` arm.
+1. Create `src/base_cli/command/foo.py` with a `@app.command(...)` function.
+2. Import it in `main.py` so it registers on the app.
 3. Add a test in `tests/test_main.py`.
 4. `make check` (must stay at 100% coverage).
 

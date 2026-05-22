@@ -2,23 +2,12 @@ import logging
 
 from rich.markdown import Markdown
 
-from base_cli.logging import MarkdownRichHandler
-from tests.conftest import RunCli
+from base_cli.logging import MarkdownRichHandler, configure_logging
 
 
-def test_default_verbosity_is_info(run_cli: RunCli) -> None:
-    run_cli("helloworld")
+def test_default_level_is_info() -> None:
+    configure_logging()
     assert logging.getLogger().level == logging.INFO
-
-
-def test_verbose_flag_sets_debug(run_cli: RunCli) -> None:
-    run_cli("-v", "helloworld")
-    assert logging.getLogger().level == logging.DEBUG
-
-
-def test_quiet_flag_sets_warning(run_cli: RunCli) -> None:
-    run_cli("-q", "helloworld")
-    assert logging.getLogger().level == logging.WARNING
 
 
 def test_handler_renders_markdown() -> None:

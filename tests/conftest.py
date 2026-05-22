@@ -2,15 +2,16 @@ from dataclasses import dataclass
 from typing import Protocol
 
 import pytest
+from typer.testing import CliRunner
 
-from base_cli import main
+from base_cli import main  # pyright: ignore[reportUnusedImport]  # noqa: F401
+from base_cli.app import app
 
 
 @dataclass(frozen=True, slots=True)
 class CliResult:
     code: int
     stdout: str
-    stderr: str
 
 
 class RunCli(Protocol):
@@ -18,14 +19,11 @@ class RunCli(Protocol):
 
 
 @pytest.fixture
-def run_cli(capsys: pytest.CaptureFixture[str]) -> RunCli:
+def run_cli() -> RunCli:
+    runner = CliRunner()
+
     def _run(*args: str) -> CliResult:
-        try:
-            code = main.main(list(args))
-        except SystemExit as exc:
-            # argparse always exits with an int status
-            code = exc.code if isinstance(exc.code, int) else 1  # pragma: no branch
-        captured = capsys.readouterr()
-        return CliResult(code=code, stdout=captured.out, stderr=captured.err)
+        result = runner.invoke(app, list(args))
+        return CliResult(code=result.exit_code, stdout=result.stdout)
 
     return _run
