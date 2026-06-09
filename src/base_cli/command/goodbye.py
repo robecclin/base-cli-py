@@ -1,6 +1,6 @@
 from typing import Annotated
 
-from typer import Option  # pyright: ignore[reportUnknownVariableType]
+from typer import Option, echo  # pyright: ignore[reportUnknownVariableType]
 
 from base_cli.app import app
 
@@ -9,4 +9,4 @@ from base_cli.app import app
 def goodbye(
     name: Annotated[str, Option(help="Name to bid farewell")] = "world",
 ) -> None:
-    print(f"Goodbye, {name}!")
+    echo(f"Goodbye, {name}!")
