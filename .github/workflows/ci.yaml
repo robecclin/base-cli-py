@@ -21,7 +21,7 @@ jobs:
       UV_LOCKED: 'true'
       UV_NO_PROGRESS: 'true'
     steps:
-      - uses: actions/checkout@v6.0.3
+      - uses: actions/checkout@v7.0.0
       - uses: astral-sh/setup-uv@v8.2.0
         with:
           enable-cache: true
