@@ -1,6 +1,6 @@
 from typing import Annotated
 
-from typer import Option, echo  # pyright: ignore[reportUnknownVariableType]
+from typer import Option, echo
 
 from base_cli.app import app
 
